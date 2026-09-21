@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ace Cricket Academy | Play Strong</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Bebas Neue, Oswald, and Inter for athletic editorial look -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              forest: '#0a1f18',
+              deepGreen: '#123024',
+              turf: '#66a105',
+              turfLight: '#84cc16',
+              accent: '#70ad18',
+              cardDark: '#162b22',
+              cream: '#fbfbfa',
+              subtleGray: '#f0f1ee'
+            }
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'Oswald', 'sans-serif'],
+            oswald: ['"Oswald"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif']
+          },
+          letterSpacing: {
+            tighter: '-0.04em',
+            condensed: '-0.02em',
+            widestPlus: '0.2em'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography">
+    .font-hero {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.02em;
+      line-height: 0.88;
+    }
+    .font-heading {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+  </style>
+<style data-purpose="layout">
+    /* Subtle touch active styles for mobile iOS */
+    .touch-tap:active {
+      transform: scale(0.97);
+      transition: transform 0.1s ease;
+    }
+    /* Hide scrollbar for smooth horizontal reels if needed */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-brand-cream text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-brand-turf selection:text-white">
+<!-- BEGIN: MainHeader -->
+<header class="fixed top-0 inset-x-0 z-50 bg-brand-forest/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+<div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2.5 group" href="#">
+<div class="w-9 h-9 rounded-full border border-white/25 flex items-center justify-center bg-brand-deepGreen/60 text-brand-turf font-display text-xl tracking-wider group-hover:border-brand-turf transition-colors">
+          A
+        </div>
+<div class="leading-none">
+<span class="block font-display text-white text-xl tracking-wider">ACE CRICKET</span>
+<span class="block text-[9px] uppercase tracking-widest text-slate-300 font-semibold">Academy • Elite Coaching</span>
+</div>
+</a>
+<!-- Quick Action CTA & Menu -->
+<div class="flex items-center gap-2.5">
+<a class="touch-tap bg-brand-turf hover:bg-brand-turfLight text-brand-forest font-bold text-xs uppercase tracking-wider py-2 px-3 rounded shadow-sm transition" href="#trial-booking">
+          Book Trial
+        </a>
+<button aria-label="Toggle Menu" class="w-9 h-9 rounded flex items-center justify-center text-white hover:bg-white/10 transition" id="mobileMenuBtn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Collapsible Mobile Drawer Navigation -->
+<nav class="hidden bg-brand-forest border-b border-white/10 px-4 py-4 space-y-3 font-medium text-sm text-slate-200" id="mobileNav">
+<a class="block py-1 hover:text-brand-turf transition" href="#about">About Academy</a>
+<a class="block py-1 hover:text-brand-turf transition" href="#programs">Coaching Programs</a>
+<a class="block py-1 hover:text-brand-turf transition" href="#excellence">Why Ace Cricket</a>
+<a class="block py-1 hover:text-brand-turf transition" href="#coaches">Our Coaches</a>
+<a class="block py-1 text-brand-turf font-semibold transition" href="#trial-booking">Schedule Free Trial</a>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-[92vh] pt-16 bg-brand-forest flex flex-col justify-between overflow-hidden" data-purpose="hero-section">
+<!-- Atmospheric Stadium Background Graphics -->
+<div class="absolute inset-0 bg-gradient-to-b from-brand-forest/70 via-brand-forest/40 to-brand-forest z-10 pointer-events-none"></div>
+<div class="absolute inset-0 z-0">
+<!-- Hero cricket backdrop illustration with stadium field & lighting -->
+<img alt="Cricket match stadium under lights" class="w-full h-full object-cover object-center opacity-45 scale-105 filter brightness-90 contrast-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuQQrblbK7Vhph16kd5f2MejPxuyIDjI-JXQFiWBXSBg1-g4BDL60g1cG2oty0s6Mcojf-HVTuomj9l_Cj4Q51U9nhLWaI1T9gu5bjgL2QMZJat0thSxZzWi7y3jZ3LRXISqPu6z_Mo8Wkae901pqrEH9LWJ5PILm4nL2HX4uIo0GgUG8WUHB_s1jKCNi1QKKQPYG1Yd4faZpfQ3preeAxMtWbru0zBBjG3FcrHFASzAeam8X8Lxyr"/>
+</div>
+<!-- Massive Athletic Typography -->
+<div class="relative z-20 px-4 pt-10 text-center">
+<h1 class="font-hero text-white text-[25vw] sm:text-[110px] leading-none tracking-tight drop-shadow-2xl uppercase">
+        PLAY STRONG<span class="text-brand-turf">.</span>
+</h1>
+</div>
+<!-- Dynamic Batsman Action cutout composition -->
+<div class="relative z-20 flex-1 flex items-center justify-center px-4 -mt-6 sm:-mt-12">
+<div class="relative w-full max-w-sm mx-auto">
+<!-- Stadium Floodlight Glow FX -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-64 h-64 bg-brand-turf/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Action Player Image -->
+<div class="relative mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 aspect-[4/5] max-h-[460px]">
+<img alt="Cricket batsman playing a confident drive shot" class="w-full h-full object-cover object-top filter contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJeLmFq78Cq3P6LEd0ye-4626uhwvc9P7gE-Ta4uF6NttitYewPUH1dTPnSyZKH4CKSHLaTUC0vqJCtBJTpPVh2_Dt1CjpzMdA21zN4AiIG8YgNUmPxj1ipZWfOBVjD2Dpqjgak8fwYU8IIhoKCewVApJnG_3xR3FOKax5been9238YPPu-RFjj6y81o7Nw1Hxx_Y3kT0Dr9vbaSbXqoYrv1QVKXqkcVfCVCMzJSkLngxHcUdcpy9m"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-forest via-transparent to-transparent opacity-80"></div>
+<!-- Batsman Badge Floating Details -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white/90">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-turf animate-pulse"></span>
+<span class="text-xs font-semibold uppercase tracking-wider">Live Nets In Session</span>
+</div>
+<span class="text-[11px] font-mono text-slate-300">TURF #01</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Bottom Hook Card & Slider Indicators -->
+<div class="relative z-20 px-4 pb-8 max-w-md mx-auto w-full">
+<div class="bg-brand-deepGreen/95 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-xl flex items-end justify-between">
+<div>
+<span class="text-[11px] font-bold tracking-widest text-slate-300 uppercase block mb-1">Join The</span>
+<p class="text-white font-oswald text-xl uppercase tracking-wide leading-tight">
+            Premier Cricket Coaching<br/>In Your City
+          </p>
+<div class="w-10 h-0.5 bg-brand-turf mt-2"></div>
+</div>
+<!-- Navigation Controls from original design -->
+<div class="flex items-center gap-1.5 pl-2">
+<button aria-label="Previous Slide" class="w-9 h-9 rounded bg-white text-slate-900 flex items-center justify-center hover:bg-slate-200 transition font-bold text-sm touch-tap shadow">
+            ←
+          </button>
+<button aria-label="Next Slide" class="w-9 h-9 rounded bg-white text-slate-900 flex items-center justify-center hover:bg-slate-200 transition font-bold text-sm touch-tap shadow">
+            →
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="py-14 px-4 max-w-md mx-auto bg-brand-cream" data-purpose="about-section" id="about">
+<!-- Sub-header Breadcrumb line -->
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-stone-200">
+<div class="w-6 h-6 rounded-full border border-stone-400 flex items-center justify-center text-[10px] font-bold text-stone-700">
+        𝒜
+      </div>
+<span class="text-xs uppercase font-semibold tracking-widest text-stone-500">About</span>
+<div class="flex-1 h-px bg-stone-200"></div>
+</div>
+<!-- Major Editorial Heading -->
+<h2 class="font-heading text-3xl sm:text-4xl text-stone-950 font-bold uppercase tracking-tight mb-5 leading-none">
+      Building Champions On<br/>And Off The Field
+    </h2>
+<!-- Mission & Approach Description Paragraphs -->
+<div class="space-y-3.5 text-stone-600 text-sm leading-relaxed mb-6 font-normal">
+<p>
+        At <strong class="text-stone-900 font-semibold">Ace Cricket</strong>, we believe in more than just winning matches. We focus on building character, discipline, and quiet confidence through the timeless discipline of cricket.
+      </p>
+<p>
+        Our programs are meticulously crafted for all ages and skill levels, from raw beginners discovering batting fundamentals to high-performance tournament players.
+      </p>
+<p>
+        With experienced BCCI-certified coaches, world-class turf wickets, and a passion for sporting excellence, we help you unlock your fullest potential.
+      </p>
+</div>
+<!-- Call to action button -->
+<div class="mb-8">
+<a class="touch-tap inline-flex items-center justify-between gap-3 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs uppercase tracking-wider py-3 px-5 rounded shadow-sm" href="#trial-booking">
+<span>Learn More</span>
+<span class="w-4 h-4 bg-brand-turf text-brand-forest rounded-sm flex items-center justify-center text-xs font-bold">&gt;</span>
+</a>
+</div>
+<!-- Visual Showcase Grid with Bowler and Batsman -->
+<div class="space-y-4" data-purpose="visual-showcase">
+<!-- Main Bowler Feature Card with Stats Bar -->
+<div class="rounded-xl overflow-hidden bg-white shadow-md border border-stone-200/80">
+<div class="relative aspect-[4/4] overflow-hidden bg-brand-deepGreen">
+<img alt="Young athletic cricket fast bowler releasing cricket ball in net practice" class="w-full h-full object-cover object-center filter contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8cDKM6SfimQZlG5eQ3MToR07Yeu6K9PRCK8yl4dGyh3BBqOV8OoMex-GObYPoHdEx5tOfEAVjELJMagN3f89qLOjE3Pso2IgJ9z_ReKAk-vTGfO_1c1edlc5Fzk_IxeTu-ieaueg4sJ920Sk4Jueat7W-bU9xiq3nBdRPwYWXwIBR-DehZgWOy8l3cnad0qtTFlgeHTlAXAmFTBtgja_BXUsMLRjIJeibKSYUrWF9W6plIgIaljbM"/>
+<!-- Highlight badge -->
+<div class="absolute top-3 left-3 bg-brand-forest/90 backdrop-blur-sm text-brand-turf text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+            Fast Bowling Lab
+          </div>
+</div>
+<!-- Integrated Stats Overlay Bar matching reference -->
+<div class="bg-brand-cardDark text-white p-4 flex items-center justify-between border-t border-white/10">
+<div class="flex items-center gap-6 divide-x divide-white/20">
+<div>
+<span class="block text-2xl font-bold font-oswald text-brand-turfLight">500+</span>
+<span class="block text-[11px] text-stone-300 font-medium tracking-tight">Active Players</span>
+</div>
+<div class="pl-6">
+<span class="block text-2xl font-bold font-oswald text-brand-turfLight">20+</span>
+<span class="block text-[11px] text-stone-300 font-medium tracking-tight">Professional Coaches</span>
+</div>
+</div>
+<!-- Arrow Icon Action -->
+<a aria-label="View Programs" class="w-10 h-10 rounded bg-brand-turf text-brand-forest flex items-center justify-center text-lg font-bold hover:bg-brand-turfLight transition touch-tap" href="#programs">
+            ↗
+          </a>
+</div>
+</div>
+<!-- Secondary Split: Action Match Play & Excellence Counter -->
+<div class="grid grid-cols-1 gap-4 pt-2">
+<div class="rounded-xl overflow-hidden border border-stone-200/80 aspect-[16/9] shadow-sm">
+<img alt="Cricket batsman facing bowler in stadium pitch under sky" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoP_XlZOKXXOmFpSRLA_uWxawAonNDqAtn5AUPE3qOIglbpJCgpLiqte_2PoE60C1XDsNbLLfaIsA-mQv4A878v6NJ-gtvSRh97K3rXhxlA3qENbW9oGoSANg-y4ZOU_junpEzT0R0zWKXX1oYSIf-KmjovE55hShBBlxEpCYbTZ7-e5c3aANdyAjHlZTx_xcLVqLXJwjkPr4zGN9dHC6bW0hCvvHuAAJjdHfZj2b6B-UPQtX0LhKI"/>
+</div>
+<!-- 15 Years of Excellence Showcase -->
+<div class="bg-white p-5 rounded-xl border border-stone-200 shadow-sm flex flex-col justify-center">
+<div class="flex items-baseline gap-3 mb-3">
+<span class="font-hero text-6xl text-brand-accent leading-none tracking-tight">15</span>
+<div class="leading-none">
+<span class="block text-lg font-bold font-oswald uppercase text-stone-900">Years of</span>
+<span class="block text-lg font-bold font-oswald uppercase text-stone-900">Excellence</span>
+</div>
+</div>
+<ul class="space-y-2 text-xs text-stone-600 font-medium pt-2 border-t border-stone-100">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-turf"></span>
+              Expert coaching staff &amp; ex-First Class players
+            </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-turf"></span>
+              World-class outdoor &amp; indoor turf facilities
+            </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-turf"></span>
+              Personalized training &amp; technical video review
+            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ProgramsSection -->
+<section class="py-14 px-4 max-w-md mx-auto bg-stone-50 border-t border-stone-200/80" data-purpose="programs-section" id="programs">
+<!-- Programs Section Header -->
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-stone-200">
+<div class="w-6 h-6 rounded border border-stone-400 flex items-center justify-center text-[10px] font-bold text-stone-700">
+        ⊞
+      </div>
+<span class="text-xs uppercase font-semibold tracking-widest text-stone-500">Our Programs</span>
+<div class="flex-1 h-px bg-stone-200"></div>
+</div>
+<div class="mb-6">
+<h2 class="font-heading text-3xl text-stone-950 font-bold uppercase tracking-tight">
+        Structured Pathways
+      </h2>
+<p class="text-xs text-stone-500 mt-1">From first-time bat grip to competitive tournament play.</p>
+</div>
+<!-- Programs Cards List -->
+<div class="space-y-6">
+<!-- Program 1: Beginner Training -->
+<article class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition">
+<div class="relative aspect-[16/10] overflow-hidden bg-stone-100">
+<img alt="Cricket gear, bat and helmet resting on grass" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwEgXO72n6U196iwOu1aWyxqFdwq7VD8yxYw8B8dulLR8ZmNuqvkNyfCYB72755YucAVnVOhb2RIXrekhb-e7oP9l4Nqt2YwnTf1nYMCzJy289YRoc_U8vge3Kan6_Pkm2qBzA8Kc_Pjr-nnpQ5IQf7UK0uo7gazBwrVEZcW_xRHu9Ad_0AHUwx4U5kivDWKWIr1qLdR_Z9xMQ7H2JY8Gqd8y_2X4407f35XpoXr44TLOkzXq-eD1H"/>
+<span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-xs text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">
+            Ages 6 – 12
+          </span>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded bg-white text-stone-900 flex items-center justify-center text-sm font-bold shadow">
+            ↗
+          </div>
+</div>
+<div class="p-4">
+<div class="flex items-baseline justify-between mb-1.5">
+<h3 class="font-heading text-lg text-stone-900 font-bold uppercase tracking-wide">
+              Beginner Training
+            </h3>
+<span class="text-xs font-semibold text-brand-accent">Foundation</span>
+</div>
+<p class="text-xs text-stone-600 mb-3 leading-relaxed">
+            Focuses on bat grip, stance, basic footwork, hand-eye coordination, and joyful cricket basics in safe soft-ball &amp; turf setups.
+          </p>
+<div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs font-semibold">
+<span class="text-stone-500">3 Sessions / Week</span>
+<a class="text-stone-900 hover:text-brand-accent inline-flex items-center gap-1 group-hover:underline" href="#trial-booking">
+              Learn More →
+            </a>
+</div>
+</div>
+</article>
+<!-- Program 2: Intermediate Training -->
+<article class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition">
+<div class="relative aspect-[16/10] overflow-hidden bg-stone-100">
+<img alt="Coach guiding young cricketer with batting stance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7ii4Y8Bz5riyLHnH3ahRK6HqnR9CIQMHPi5wF9GjjajKeVy8KZkxt3fD_LlCFhU82zL0qMZZwJO22sR165mVcRFPanum6et_1vZL-LxLUuhhxzeHNhFn3KDQ_p_s0B1yBVyiYlQqHA5Og8ubFBOxCiaKQaNMlS2iLYX3maT163tKxa7iGUHJTr_G7aaF5UfWDHEThcmMdBLPew7vtOosfX5ofX4m5WziAM0YFxF0t4j0TZv7_EuZc"/>
+<span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-xs text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">
+            Ages 12 – 17
+          </span>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded bg-white text-stone-900 flex items-center justify-center text-sm font-bold shadow">
+            ↗
+          </div>
+</div>
+<div class="p-4">
+<div class="flex items-baseline justify-between mb-1.5">
+<h3 class="font-heading text-lg text-stone-900 font-bold uppercase tracking-wide">
+              Intermediate Training
+            </h3>
+<span class="text-xs font-semibold text-brand-accent">Development</span>
+</div>
+<p class="text-xs text-stone-600 mb-3 leading-relaxed">
+            Leather ball transition, bowling action refinement, shot selection under pace and spin, bowling variations, and tactical game awareness.
+          </p>
+<div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs font-semibold">
+<span class="text-stone-500">4 Sessions / Week</span>
+<a class="text-stone-900 hover:text-brand-accent inline-flex items-center gap-1 group-hover:underline" href="#trial-booking">
+              Learn More →
+            </a>
+</div>
+</div>
+</article>
+<!-- Program 3: Advanced High Performance -->
+<article class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition">
+<div class="relative aspect-[16/10] overflow-hidden bg-stone-100">
+<img alt="Cricketer diving athletic fielding catch" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6o-FVO9CKSsbvuVohibw5i0Vznd2mAzZDvTawVae-rPknjgCU_fH4iTQT8vZJHR8W5E8VPmd9-XUR6Lln0h-1A67SaRBwIFKbM4lyK1aGg5keiNVH8kFfAk600BdO0L45Y8j2upGKFfpLkNWLt8c6UpYg3LKG7IsGjFtDsUOSpv8XOwPqJ3dDnkxyhg1wJFvCzpS0MTqoq67WLFbeWFAuj9afhbOzpi66D5ckKMuz6KE1NTK9pqcb"/>
+<span class="absolute top-3 left-3 bg-brand-turf text-brand-forest text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+            Club &amp; Rep Squad
+          </span>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded bg-white text-stone-900 flex items-center justify-center text-sm font-bold shadow">
+            ↗
+          </div>
+</div>
+<div class="p-4">
+<div class="flex items-baseline justify-between mb-1.5">
+<h3 class="font-heading text-lg text-stone-900 font-bold uppercase tracking-wide">
+              Advanced Training
+            </h3>
+<span class="text-xs font-semibold text-brand-accent">Elite Prep</span>
+</div>
+<p class="text-xs text-stone-600 mb-3 leading-relaxed">
+            High-speed bowling machine facing, mental conditioning, match scenario simulations, strength &amp; conditioning, and video biomechanics.
+          </p>
+<div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs font-semibold">
+<span class="text-stone-500">5 Sessions / Week + Match Day</span>
+<a class="text-stone-900 hover:text-brand-accent inline-flex items-center gap-1 group-hover:underline" href="#trial-booking">
+              Learn More →
+            </a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- END: ProgramsSection -->
+<!-- BEGIN: WhyChooseUsSection -->
+<section class="py-14 px-4 bg-brand-forest text-white" data-purpose="why-choose-us" id="excellence">
+<div class="max-w-md mx-auto">
+<!-- Section Header -->
+<div class="flex items-center gap-3 mb-6 pb-2 border-b border-white/10">
+<div class="w-6 h-6 rounded-full border border-brand-turf/50 flex items-center justify-center text-[10px] font-bold text-brand-turf">
+          ★
+        </div>
+<span class="text-xs uppercase font-semibold tracking-widest text-brand-turf">Why Choose Us</span>
+<div class="flex-1 h-px bg-white/10"></div>
+</div>
+<h2 class="font-heading text-3xl font-bold uppercase tracking-tight mb-2">
+        The Ace Advantage
+      </h2>
+<p class="text-xs text-stone-300 mb-8 leading-relaxed">
+        We merge traditional cricket discipline with modern athletic science to mold future-ready cricketers.
+      </p>
+<!-- Feature Grid -->
+<div class="grid grid-cols-2 gap-3.5">
+<!-- Feature 1 -->
+<div class="bg-brand-cardDark p-4 rounded-xl border border-white/5 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-brand-turf/20 text-brand-turf flex items-center justify-center text-base mb-3 font-bold">
+              01
+            </div>
+<h3 class="font-oswald text-sm font-semibold uppercase text-white mb-1">
+              BCCI Certified Coaches
+            </h3>
+<p class="text-[11px] text-stone-300 leading-snug">
+              Instructed by experienced first-class and national level certified mentors.
+            </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-brand-cardDark p-4 rounded-xl border border-white/5 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-brand-turf/20 text-brand-turf flex items-center justify-center text-base mb-3 font-bold">
+              02
+            </div>
+<h3 class="font-oswald text-sm font-semibold uppercase text-white mb-1">
+              Video &amp; AI Analysis
+            </h3>
+<p class="text-[11px] text-stone-300 leading-snug">
+              Frame-by-frame bowling action review and batsman trigger movement insights.
+            </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-brand-cardDark p-4 rounded-xl border border-white/5 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-brand-turf/20 text-brand-turf flex items-center justify-center text-base mb-3 font-bold">
+              03
+            </div>
+<h3 class="font-oswald text-sm font-semibold uppercase text-white mb-1">
+              6 Turf &amp; Indoor Pitches
+            </h3>
+<p class="text-[11px] text-stone-300 leading-snug">
+              Year-round practice through covered indoor nets, bowling machines, and natural turf.
+            </p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-brand-cardDark p-4 rounded-xl border border-white/5 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-brand-turf/20 text-brand-turf flex items-center justify-center text-base mb-3 font-bold">
+              04
+            </div>
+<h3 class="font-oswald text-sm font-semibold uppercase text-white mb-1">
+              Competitive Matches
+            </h3>
+<p class="text-[11px] text-stone-300 leading-snug">
+              Regular weekend league exposure, tournament matches, and talent showcase trials.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WhyChooseUsSection -->
+<!-- BEGIN: TrialBookingSection -->
+<section class="py-14 px-4 bg-white" data-purpose="booking-form-section" id="trial-booking">
+<div class="max-w-md mx-auto">
+<div class="bg-stone-900 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
+<!-- Accent Glow -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-turf/25 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<span class="inline-block bg-brand-turf text-brand-forest text-[10px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded mb-2">
+            Limited Open Slots
+          </span>
+<h2 class="font-heading text-2xl font-bold uppercase tracking-tight text-white mb-2">
+            Book A Free Trial Assessment
+          </h2>
+<p class="text-xs text-stone-300 mb-5 leading-relaxed">
+            Attend a 60-minute net evaluation with our head coach. Batting &amp; bowling skill report included.
+          </p>
+<form class="space-y-3" id="trialForm">
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-300 mb-1" for="fullName">Student / Player Name</label>
+<input class="w-full bg-stone-800/90 border border-stone-700 text-white rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-turf focus:border-transparent outline-none placeholder-stone-500" id="fullName" placeholder="e.g. Liam Parker" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-300 mb-1" for="ageGroup">Age Category</label>
+<select class="w-full bg-stone-800/90 border border-stone-700 text-white rounded-lg px-3 py-2.5 text-xs focus:ring-2 focus:ring-brand-turf outline-none" id="ageGroup">
+<option>Under 10 (Junior)</option>
+<option>Under 14 (Cadet)</option>
+<option>Under 19 (Youth)</option>
+<option>Senior / Open (19+)</option>
+</select>
+</div>
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-300 mb-1" for="primaryRole">Discipline</label>
+<select class="w-full bg-stone-800/90 border border-stone-700 text-white rounded-lg px-3 py-2.5 text-xs focus:ring-2 focus:ring-brand-turf outline-none" id="primaryRole">
+<option>All-Rounder</option>
+<option>Batsman</option>
+<option>Fast Bowler</option>
+<option>Spin Bowler</option>
+<option>Wicketkeeper</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-stone-300 mb-1" for="phoneNumber">Parent / Player Mobile</label>
+<input class="w-full bg-stone-800/90 border border-stone-700 text-white rounded-lg px-3.5 py-2.5 text-xs focus:ring-2 focus:ring-brand-turf outline-none placeholder-stone-500" id="phoneNumber" placeholder="+1 (555) 019-2834" required="" type="tel"/>
+</div>
+<button class="w-full touch-tap bg-brand-turf hover:bg-brand-turfLight text-brand-forest font-bold text-xs uppercase tracking-widest py-3.5 px-4 rounded-lg mt-2 transition shadow-md flex items-center justify-center gap-2" type="submit">
+<span>Confirm Assessment Slot</span>
+<span>→</span>
+</button>
+</form>
+<div class="hidden mt-4 p-3 bg-brand-deepGreen/80 border border-brand-turf rounded-lg text-center text-xs text-brand-turfLight font-medium" id="bookingConfirmation">
+            Thank you! Your trial request has been submitted. Our coach will contact you within 2 hours.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TrialBookingSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-forest border-t border-white/10 text-stone-400 py-10 px-4" data-purpose="footer">
+<div class="max-w-md mx-auto space-y-6 text-center">
+<!-- Footer Logo & Mission -->
+<div>
+<span class="font-display text-2xl tracking-wider text-white">ACE CRICKET ACADEMY</span>
+<p class="text-xs text-stone-400 mt-1 max-w-xs mx-auto">
+          Cultivating sporting character, supreme athletic fitness, and cricketing masters.
+        </p>
+</div>
+<!-- Quick Contact Info -->
+<div class="text-xs space-y-1 text-stone-300">
+<p class="font-medium text-white">Central Sports Complex &amp; Turf Grounds</p>
+<p>124 Stadium Parkway, Athletic District</p>
+<p>Helpline: +1 (800) 245-CRIC • coach@acecricket.com</p>
+</div>
+<!-- Hours -->
+<div class="bg-brand-cardDark/60 py-2.5 px-4 rounded-lg text-[11px] text-stone-300 inline-block border border-white/5">
+<span class="text-brand-turf font-semibold">Academy Net Timings:</span> Mon–Sat: 6:00 AM – 9:00 PM | Sun: Match Days
+      </div>
+<!-- Legal / Copyright -->
+<div class="pt-6 border-t border-white/10 text-[11px] text-stone-400 flex flex-col sm:flex-row items-center justify-between gap-2">
+<p>© 2025 Ace Cricket Academy. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-white transition" href="#">Privacy Policy</a>
+<a class="hover:text-white transition" href="#">Terms of Play</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="navigation-interactivity">
+    // Toggle mobile navigation menu
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+
+      // Close menu when clicking nav links
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+        });
+      });
+    }
+
+    // Trial Form Submission Simulation
+    const trialForm = document.getElementById('trialForm');
+    const confirmation = document.getElementById('bookingConfirmation');
+
+    if (trialForm) {
+      trialForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        trialForm.classList.add('opacity-50', 'pointer-events-none');
+        setTimeout(() => {
+          trialForm.classList.add('hidden');
+          if (confirmation) confirmation.classList.remove('hidden');
+        }, 500);
+      });
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
